@@ -70,8 +70,8 @@ def main_routine(retries):
             for btn_color in ['./images/button_submit.png',
                               './images/button_submit_green.png']:
                 position = pyautogui.locateOnScreen(
-                    btn_color, region=submit_box_range,
-                    grayscale=True, confidence=0.1)
+                    btn_color, region=submit_box_range, grayscale=True,
+                    confidence=0.1)
 
             # print(i)
 
@@ -79,7 +79,7 @@ def main_routine(retries):
                 print('「提出」のボタンを発見しました')
                 has_attachments = True
                 break
-        i += 1
+            i += 1
 
     if position is None:
         print('ボタンが見当たらなかったため、終了します')
@@ -104,8 +104,7 @@ def main_routine(retries):
             for text_color in ['images/text_markasdone_green.png',
                                'images/text_markasdone.png']:
                 position = pyautogui.locateOnScreen(
-                    text_color, region=(930, 600, 300, 100),
-                    confidence=0.1)
+                    text_color, region=(930, 600, 300, 100), confidence=0.1)
 
             # print(i)
 
@@ -127,8 +126,7 @@ def main_routine(retries):
             for text_color in ['./images/text_submit.png',
                                './images/text_submit_green.png']:
                 position = pyautogui.locateOnScreen(
-                    text_color, region=(1000, 600, 500, 500),
-                    confidence=0.1)
+                    text_color, region=(1000, 600, 500, 500), confidence=0.1)
 
             # print(i)
 
@@ -162,7 +160,8 @@ if __name__ == '__main__':
 
     parser.add_argument('iterations', metavar='N', type=int,
                         help='specify how many times to iterate marking as completed')
-    parser.add_argument('-r', '--retries', metavar='N', help='specify the number of retry attempts if failed',
+    parser.add_argument('-r', '--retries', metavar='N',
+                        help='specify the number of retry attempts if failed',
                         required=False, type=int, default=5)
     args = parser.parse_args()
 
